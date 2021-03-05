@@ -1,0 +1,57 @@
+{% extends 'Back.html.twig' %}
+
+{% block body %}
+    <main class="content">
+        <div class="container-fluid p-0">
+
+            <h1 class="h3 mb-3">Form Layouts</h1>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Ajouter Article</h5>
+
+                        </div>
+                        <div class="card-body">
+{{ form_start(formArticle) }}
+                            {{ form_errors(formArticle) }}
+
+
+
+
+
+
+                            <form>
+                                <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        {{ form_row(formArticle.Titre) }}
+                                    </div>
+                                    <div class="mb-3 col-md-4">
+                                        {{ form_row(formArticle.Categorie) }}
+                                    </div>
+                                    <div class="mb-3 col-md-2">
+                                        {{ form_row(formArticle.Auteur) }}
+                                    </div>
+                                </div>
+                                <div >
+                                    {{ form_row(formArticle.Contenu) }}
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    {{ form_row(formArticle.Image) }}
+
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">{% if editMode %}Enregistrer{% else %}Ajouter{% endif %}</button>
+                                {{ form_end(formArticle) }}
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </main>
+
+{% endblock %}
